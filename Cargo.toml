@@ -1,0 +1,21 @@
+[package]
+name = "ezssh"
+version = "0.0.1"
+edition = "2021"
+authors = ["assafvayner"]
+description = "A utilitiy cli to ssh into AWS EC2 instances"
+readme = "README.md"
+repository = "https://github.com/assafvayner/ezssh"
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "ezssh"
+
+[dependencies]
+aws-config = "0.57.1"
+toml = "0.8.6"
+tokio = { version = "1", features = ["full"] }
+thiserror = "1.0.50"
+aws-sdk-ec2 = "0.35.0"
+defaults = "0.2.0"
+aws-sdk-autoscaling = "0.35.0"
