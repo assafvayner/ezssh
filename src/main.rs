@@ -5,9 +5,10 @@ use ezssh::error_printer::ErrorPrinter;
 
 #[tokio::main]
 async fn main() -> Result<(), EzsshError> {
-    let config = EzsshConfig::get()?;
+    let config = EzsshConfig::get();
+    eprintln!("{config:?}");
 
-    let command = EzsshCommand::from_config(config).await?;
+    let command = EzsshCommand::from_config(&config).await?;
 
     command.exec().log_error("error from exec'ing ssh")
 }

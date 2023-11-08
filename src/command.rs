@@ -18,9 +18,7 @@ impl EzsshCommand {
             EzsshConfig::Instance(instance_config) => {
                 crate::aws::command_from_instance_config(instance_config).await
             }
-            EzsshConfig::AutoscalingGroup(asg_config) => {
-                crate::aws::command_from_asg_config(asg_config).await
-            }
+            EzsshConfig::ASG(asg_config) => crate::aws::command_from_asg_config(asg_config).await,
         }
     }
 
