@@ -6,7 +6,6 @@ use ezssh::error_printer::ErrorPrinter;
 #[tokio::main]
 async fn main() -> Result<(), EzsshError> {
     let config = EzsshConfig::get();
-    eprintln!("{config:?}");
 
     let command = EzsshCommand::from_config(&config).await?;
 

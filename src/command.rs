@@ -30,14 +30,13 @@ impl EzsshCommand {
     }
 }
 
-impl Into<Command> for EzsshCommand {
-    fn into(self) -> Command {
+impl From<EzsshCommand> for Command {
+    fn from(value: EzsshCommand) -> Self {
         let mut command = Command::new(SSH_BIN);
-        command.args(build_ssh_args(&self));
+        command.args(build_ssh_args(&value));
         command
     }
 }
-
 fn build_ssh_args(command: &EzsshCommand) -> Vec<String> {
     let mut args = Vec::new();
     if let Some(key_path) = &command.ssh_key_path {

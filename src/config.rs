@@ -5,7 +5,6 @@ const DEFAULT_USER_NAME: &str = "ubuntu";
 
 #[derive(Debug, Defaults, Clone, Args)]
 pub struct InstanceConfig {
-    // #[def = "DEFAULT_USER_NAME.to_string()"]
     #[clap(short = 'u', long = "username", default_value = DEFAULT_USER_NAME)]
     pub(crate) user_name: String,
     #[clap(short = 'k', long = "key")]
@@ -16,7 +15,6 @@ pub struct InstanceConfig {
 
 #[derive(Debug, Defaults, Clone, Args)]
 pub struct AutoscalingGroupConfig {
-    // #[def = "DEFAULT_USER_NAME.to_string()"]
     #[clap(short = 'u', long = "username", default_value = DEFAULT_USER_NAME)]
     pub(crate) user_name: String,
     #[clap(short = 'k', long = "key")]
